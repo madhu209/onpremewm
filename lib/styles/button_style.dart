@@ -17,5 +17,5 @@ ButtonStyle textButtonStyleFill() {
       foregroundColor: Colors.white,
       backgroundColor: ColorConstants.buttonBGColor,
       textStyle: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)));
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)));
 }

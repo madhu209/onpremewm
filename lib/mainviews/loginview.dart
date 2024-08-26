@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:onpremewm/constants/assets.dart';
 import 'package:onpremewm/constants/constants.dart';
+import 'package:onpremewm/mainviews/defaultwarehouse.dart';
 import 'package:onpremewm/styles/button_style.dart';
+import 'package:onpremewm/views/plaintextfield.dart';
 import 'package:onpremewm/views/textfield.dart';
 
 class LoginView extends StatefulWidget {
@@ -14,14 +16,14 @@ class LoginView extends StatefulWidget {
 }
 
 class LoginViewState extends State<LoginView> {
-  late TextEditingController emailController;
+  late TextEditingController usernameController;
   late TextEditingController passwordController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
     super.initState();
-    emailController = TextEditingController(text: '');
+    usernameController = TextEditingController(text: '');
     passwordController = TextEditingController(text: '');
   }
 
@@ -48,7 +50,7 @@ class LoginViewState extends State<LoginView> {
                       key: _formKey,
                       child: Column(
                         children: [
-                          EmailTextField(emailController),
+                          PlainTextField(usernameController, "Username"),
                           const SizedBox(height: 20),
                           PasswordTF(passwordController, Constants.password),
                           const SizedBox(height: 20),
@@ -98,39 +100,45 @@ extension LoginViewStateUI on LoginViewState {
         height: 48,
         child: TextButton(
           style: textButtonStyleFill(),
-          onPressed: () async {
-            if (_formKey.currentState!.validate()) {
-              // ignore: invalid_use_of_protected_member
-              setState(() {
-                // isLoading = true;
-              });
-              // try {
-              //   responseTokenInfo = await authenticateUser();
-              //   accessToken = await getAuthToken();
-              //   responseLogin = await loginUser(
-              //       emailController.text, passwordController.text);
-              //   StateManager().responseLogin = responseLogin;
-              //   await UserNetworkController().getUserProfileInfo();
-              //   // ignore: invalid_use_of_protected_member
-              //   setState(() {
-              //     isLoading = false;
-              //   });
-              //   // ignore: use_build_context_synchronously
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //           builder: (context) => const XCarrierTabBar()));
-              // } catch (error) {
-              //   // ignore: invalid_use_of_protected_member
-              //   setState(() {
-              //     isLoading = false;
-              //   });
-              //   // ignore: use_build_context_synchronously
-              //   DialogUtils.displayDialogOKCallBack(context, error.toString());
-              // }
-            } else {
-              print("Not Validated"); // ignore: avoid_print
-            }
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const DefaultWareHouse()));
+
+            // if (_formKey.currentState!.validate()) {
+            //   // ignore: invalid_use_of_protected_member
+            //   setState(() {
+            //     isLoading = true;
+            //   });
+
+            //   try {
+            //     responseTokenInfo = await authenticateUser();
+            //     accessToken = await getAuthToken();
+            //     responseLogin = await loginUser(
+            //         emailController.text, passwordController.text);
+            //     StateManager().responseLogin = responseLogin;
+            //     await UserNetworkController().getUserProfileInfo();
+            //     // ignore: invalid_use_of_protected_member
+            //     setState(() {
+            //       isLoading = false;
+            //     });
+            //     // ignore: use_build_context_synchronously
+            //     Navigator.push(
+            //         context,
+            //         MaterialPageRoute(
+            //             builder: (context) => const XCarrierTabBar()));
+            //   } catch (error) {
+            //     // ignore: invalid_use_of_protected_member
+            //     setState(() {
+            //       isLoading = false;
+            //     });
+            //     // ignore: use_build_context_synchronously
+            //     DialogUtils.displayDialogOKCallBack(context, error.toString());
+            //   }
+            // } else {
+            //   print("Not Validated"); // ignore: avoid_print
+            // }
           },
           child: const Text(Constants.singIn),
         ),

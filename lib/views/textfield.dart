@@ -68,7 +68,7 @@ class PasswordTFState extends State<PasswordTF> {
             const EdgeInsets.only(top: -10, bottom: -10, left: 10, right: 10),
         border: const OutlineInputBorder(),
         labelText: widget.placeholder,
-        prefixIcon: const Icon(Icons.password),
+        prefixIcon: const Icon(Icons.lock, color: Colors.black),
         suffixIcon: IconButton(
             onPressed: () {
               setState(() {
