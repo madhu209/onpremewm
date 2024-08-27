@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		lObCPzyh/OefmU3tIyCR74I3tbE=
+		xgT9Jg0Lg9OtJnz7m24Msx/ouDk=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		zCaSHGCClijS72rmGd77HGJHjp8=
+		jA54o/f7aIX854iJWm0zjbcK+Pg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		5V56kmRWyFwrrzSPiyNjYPyXny4=
+		NQ3XEw323ziQMZxzYaARFfz9Qlo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		pszmFIHfqIEfJldICBS1vu84Kgg=
+		7PdzlvRQRYBtAwctN/tRD9eIcl0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -72,9 +72,49 @@
 		<data>
 		GnQJJLjrVN4yMqKyjwytk++ocRU=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/adhoc-goods.png</key>
+		<data>
+		MokqjrskA6W1ZqSkPvBqgcd45k4=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/all-tasks.png</key>
+		<data>
+		AfeOHdy0joDqO1L+oFIQ2eagLV8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/bin2bin-transfer.png</key>
+		<data>
+		LqL/7on9ymaytUim3pUOY07TfXI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/goods-issue.png</key>
+		<data>
+		AfeOHdy0joDqO1L+oFIQ2eagLV8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/inventory-count.png</key>
+		<data>
+		ILiNhYYX6G305Zqipn/IFcX7U7A=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/inventory-stock.png</key>
+		<data>
+		UzwpopyzXNpetYM9kOiw06eL54g=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/newbarcode.png</key>
+		<data>
+		sZqqD61MUsROPzLFtMSVX6O9KSI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/picking.png</key>
+		<data>
+		bRf+V763rM6tswJx8CUwMIgpLK4=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/pluto.png</key>
 		<data>
 		DaYfQGs+n+p/ocChXYqnQWEmiJI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/put-away.png</key>
+		<data>
+		xCobs1peIVqHHrAio3XKALqoXVU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/scraping.png</key>
+		<data>
+		zBXDEIqk2ONFw5NL+IWP/iktqf0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -86,7 +126,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		f/nDObLHdhyeHd6ibP4CC5x19g8=
+		kV7QRCFxY5HRCvsfQJUudsUNvyw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -269,7 +309,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1u8X1AworOwEZeaaiusWqHf0P2Z6CuPCJsMilmq2RdE=
+			mcL1kh8/jUpZC7w1KRvdxfkuQMzpozhvaFnp3D0lpC4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -283,21 +323,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SDyvOMjFCHhSh/qTYEZvl68v7wbywavkJJofHqnjZS8=
+			SwxXE8GplpTq4UY21NnZ9gKmbn2AcCbsHsFl5LZFSmU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kqThg3dMp4W9Vb17xJ34Uv5opqg2Pu0iUuZWziyGiSE=
+			KRZlgnVM1s9uZPXKIevOX8grIbwEchQMVGdGUvV/pmw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LArf3MfjTSvs4Z3O+r76MXutLeV/voCp9ZkksYnmAEc=
+			4hV4u7UYNaUDcwx2n56d6XkVzHIa+/MEg6TDjwe7O2U=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -314,11 +354,81 @@
 			XqGjFY0rDTVXBjPun4IfCW2X99WhiZ682XLUi1Z73LY=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/adhoc-goods.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nhbaOrcFoIzMezWbEpKhz+x/0JCddkpZ0aeyOK7HTFc=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/all-tasks.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mqjjGOzBRp70hw33x9qIIv7xfAeBQ4+7jKohDJZhiKg=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/bin2bin-transfer.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uWXFmidkLO8NT6ipsheVkid3ZtpB9EWRHnmsajKHBPo=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/goods-issue.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mqjjGOzBRp70hw33x9qIIv7xfAeBQ4+7jKohDJZhiKg=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/inventory-count.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yWjLwOoEmGYoB+Xbrboo6dfnnnmVqkaMVS1PooDp0G4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/inventory-stock.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+A8rHmTShTvziJtr/eacH4FmgElSrX8OBjib9ZPO6e0=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/newbarcode.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+dquM7f5DK1Oe4ixTCRqgjisQk5j8ejnzUqLbebUMJ0=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/picking.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dI44+mcTnDZX18EluVlHjTgfxOm8bJuDzOT7xox1KLE=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/pluto.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			1p1cdXIlQKEih4KL7QonVVEi39Y00kzg3KWpJQ1aTkE=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/put-away.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			v7VUyJWbwR3ZTWxMO9NRGKexzWZ97ixzW9LVzxvpX28=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/scraping.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			or5HmhxBb/DonpyndWs7K7vH3Ef5rOR6X3i0eVgSU0s=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -339,7 +449,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QSXJ4oc25pRDkqXz2/qdqeVa0CtOL6xjH6UGIH4wvrs=
+			DU6Dr/rtI2vLAHY2+GKRLzZt8dxuw/KN2BnBuQ+wtBg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

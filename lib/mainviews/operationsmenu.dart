@@ -41,11 +41,11 @@ class OperationsMenuState extends State<OperationsMenu> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Good morning User - Raju',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            Text(
+              '${updateGreeting()} User - Raju',
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 50),
             Expanded(
                 child: GridView.count(
               crossAxisCount: 3,
@@ -67,6 +67,21 @@ class OperationsMenuState extends State<OperationsMenu> {
         ),
       ),
     );
+  }
+
+  String updateGreeting() {
+    // setState(() {
+    // Get the current system time
+    DateTime now = DateTime.now();
+    // Determine the appropriate greeting based on the time of day
+    if (now.hour >= 6 && now.hour < 12) {
+      return "Good morning";
+    } else if (now.hour >= 12 && now.hour < 18) {
+      return "Good afternoon";
+    } else {
+      return "Good evening";
+    }
+    // });
   }
 }
 

@@ -1,8 +1,9 @@
 class Assets {
   static const String pluto = "assets/icons/pluto.png";
 
-  // Menu List
+  static const String barcodeIcon = "assets/icons/newbarcode.png";
 
+  // Menu List
   static const String adhocGoods = "assets/icons/adhoc-goods.png";
   static const String allTasks = "assets/icons/all-tasks.png";
   static const String bin2binTransfer = "assets/icons/bin2bin-transfer.png";

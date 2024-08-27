@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onpremewm/constants/assets.dart';
 import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/constants/constants.dart';
 import 'package:onpremewm/mainviews/operationsmenu.dart';
@@ -29,38 +30,39 @@ class UpdateWareHouseState extends State<UpdateWareHouse> {
     return Scaffold(
       appBar: customAppBar(Constants.updateWareHouseTitle),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 100),
         child: Align(
           alignment: Alignment.center,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const Text('Your Default Warehouse No is,'),
-              const Text(
-                '1000',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 60,
-                    fontWeight: FontWeight.bold),
-              ),
+              defaultwarehouseValue(),
               const SizedBox(height: 40),
-
               Form(
                 key: _formKey,
                 child: Column(
                   children: [
-                    PlainTextField(numberController, "Username"),
-                    const SizedBox(height: 20),
+                    Row(
+                      children: [
+                        Image.asset(
+                          Assets.barcodeIcon,
+                          width: 40,
+                          height: 48,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: PlainTextField(
+                              numberController, "Enter warehouse no", false),
+                        ),
+                        const SizedBox(width: 10),
+                        const Icon(Icons.search)
+                      ],
+                    ),
+                    const SizedBox(height: 50),
                     updateButton(),
                   ],
                 ),
               )
-
-              // Row(
-              //   children: [PlainTextField(numberController, "Warehouse")],
-              // ),
-              // updateButton(),
-              // const SizedBox(height: 40),
             ],
           ),
         ),
@@ -70,6 +72,19 @@ class UpdateWareHouseState extends State<UpdateWareHouse> {
 }
 
 extension UpdateWareHouseStateUI on UpdateWareHouseState {
+  Widget defaultwarehouseValue() {
+    return const Column(
+      children: [
+        Text('Your Default Warehouse No is,'),
+        Text(
+          '1000',
+          style: TextStyle(
+              color: Colors.black, fontSize: 60, fontWeight: FontWeight.bold),
+        )
+      ],
+    );
+  }
+
   Widget updateButton() {
     return Padding(
       padding: const EdgeInsets.only(left: 0, right: 0),

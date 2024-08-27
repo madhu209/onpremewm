@@ -50,7 +50,7 @@ class LoginViewState extends State<LoginView> {
                       key: _formKey,
                       child: Column(
                         children: [
-                          PlainTextField(usernameController, "Username"),
+                          PlainTextField(usernameController, "Username", true),
                           const SizedBox(height: 20),
                           PasswordTF(passwordController, Constants.password),
                           const SizedBox(height: 20),

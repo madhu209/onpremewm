@@ -15,6 +15,7 @@ class Constants {
   static const String selectWareHouseTitle = "Select Warehouse";
   static const String operationsMenuTitle = "Operations Menu";
   static const String updateWareHouseTitle = "Update Warehouse";
+  static const String inventoryStock = "Inventory Stock";
 
   static const String getStockInfo = "Get Stock Info";
 }
