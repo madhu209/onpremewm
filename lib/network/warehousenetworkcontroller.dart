@@ -1,15 +1,17 @@
 import 'package:onpremewm/network/networkcontroller.dart';
 import 'endpoints.dart';
 
-class LoginNetworkController {
-  dynamic loginUser(Object requestBody) async {
+class WareHouseNetworkController {
+  dynamic getWareHouseList(
+      Object requestBody, Map<String, dynamic> parameters) async {
     try {
       return await RequestController().fetchResponse(
           Endpoints.baseUrl,
-          Endpoints.login,
+          Endpoints.warehouseList,
           HTTPMethod.get,
           NetworkController().headers(),
-          requestBody, {});
+          requestBody,
+          parameters);
     } catch (error) {
       throw error.toString();
     }

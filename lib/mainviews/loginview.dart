@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:onpremewm/constants/assets.dart';
 import 'package:onpremewm/constants/constants.dart';
+import 'package:onpremewm/datacontroller/statecontroller.dart';
 import 'package:onpremewm/mainviews/defaultwarehouse.dart';
 import 'package:onpremewm/network/loginnetworkcontroller.dart';
 import 'package:onpremewm/network/models/responselogin.dart';
+import 'package:onpremewm/network/models/userdata.dart';
 import 'package:onpremewm/styles/button_style.dart';
 import 'package:onpremewm/views/plaintextfield.dart';
 import 'package:onpremewm/views/textfield.dart';
+
+var stateController = StateController();
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -129,6 +133,11 @@ extension LoginViewStateUI on LoginViewState {
               });
 
               // DialogUtils.displayDialogOKCallBack(context, "asdsad");
+
+              stateController.userData = UserData(
+                  username: usernameController.text,
+                  password: passwordController.text,
+                  warehouseNumber: "");
 
               Navigator.push(
                   context,

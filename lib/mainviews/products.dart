@@ -3,20 +3,17 @@ import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/mainviews/cells/productcard.dart';
 import 'package:onpremewm/mainviews/cells/producttitle.dart';
 import 'package:onpremewm/mainviews/cells/storagecard.dart';
-import 'package:onpremewm/mainviews/products.dart';
 
-class InventoryStockListView extends StatefulWidget {
-  const InventoryStockListView({required this.isFromProduct, super.key});
-
-  final bool isFromProduct;
+class ProductListView extends StatefulWidget {
+  const ProductListView({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return InventoryStockListViewState();
+    return ProductListViewState();
   }
 }
 
-class InventoryStockListViewState extends State<InventoryStockListView> {
+class ProductListViewState extends State<ProductListView> {
   @override
   void initState() {
     super.initState();
@@ -39,20 +36,9 @@ class InventoryStockListViewState extends State<InventoryStockListView> {
             const SizedBox(height: 40),
             Expanded(
               child: ListView.builder(
-                itemCount: widget.isFromProduct ? 20 : 5,
+                itemCount: 10,
                 itemBuilder: (context, index) {
-                  return widget.isFromProduct
-                      ? GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const ProductListView()));
-                          },
-                          child: const ProductCard(),
-                        )
-                      : const StorageCard();
+                  return const StorageCard();
                 },
               ),
             )

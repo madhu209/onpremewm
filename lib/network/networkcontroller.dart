@@ -1,6 +1,9 @@
 // ignore: depend_on_referenced_packages
 import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+import 'package:onpremewm/mainviews/loginview.dart';
 
 class RequestController {
   Future<dynamic> fetchResponse(
@@ -16,11 +19,14 @@ class RequestController {
       var url = baseUrl + endpoint;
       print(url); // ignore: avoid_print
       print(headers); // ignore: avoid_print
-      print(requestBody); // ignore: avoid_print
       print(queryParameters); // ignore: avoid_print
+      print(requestBody); // ignore: avoid_print
       if (method == HTTPMethod.get) {
-        response =
-            await get(Uri.parse(url).replace(queryParameters: queryParameters));
+        response = await http.get(
+            Uri.parse(url).replace(queryParameters: queryParameters),
+            headers: headers);
+        // response =
+        //     await get(Uri.parse(url).replace(queryParameters: queryParameters));
       } else if (method == HTTPMethod.post) {
         response = await post(Uri.parse(url),
             body: isJsonEncode == true ? json.encode(requestBody) : requestBody,
@@ -46,13 +52,12 @@ class RequestController {
 }
 
 class NetworkController {
-  late String email;
-  late String password;
-
   // Map<String, String> get headers => {"Authorization": ""};
 
-  Map<String, String> headers(String email, String password) {
-    String credentials = "$email:$password";
+  Map<String, String> headers() {
+    String credentials =
+        "${stateController.userData.username}:${stateController.userData.password}";
+    print(credentials);
     Codec<String, String> stringToBase64 = utf8.fuse(base64);
     return {
       "Authorization": "Basic ${stringToBase64.encode(credentials)}",

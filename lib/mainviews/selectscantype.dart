@@ -74,6 +74,7 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
           groupValue: select,
           onChanged: (value) {
             setState(() {
+              print(value);
               select = value;
             });
           },
@@ -118,7 +119,8 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const InventoryStockListView(),
+                  builder: (context) => InventoryStockListView(
+                      isFromProduct: select == "Product" ? true : false),
                 ));
           },
           child: const Text(Constants.getStockInfo),
