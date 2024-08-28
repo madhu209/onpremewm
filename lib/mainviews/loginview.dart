@@ -27,8 +27,8 @@ class LoginViewState extends State<LoginView> {
   @override
   void initState() {
     super.initState();
-    usernameController = TextEditingController(text: '');
-    passwordController = TextEditingController(text: '');
+    usernameController = TextEditingController(text: 'raju');
+    passwordController = TextEditingController(text: 'Pluto12345');
   }
 
   Future<ResponseLogin> loginUser(String email, String password) async {
@@ -63,14 +63,15 @@ class LoginViewState extends State<LoginView> {
                     Image.asset(
                       Assets.pluto,
                       width: 200,
-                      height: 30,
+                      height: 50,
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 100),
                     Form(
                       key: _formKey,
                       child: Column(
                         children: [
-                          PlainTextField(usernameController, "Username", true),
+                          PlainTextField(
+                              usernameController, Constants.username, true),
                           const SizedBox(height: 20),
                           PasswordTF(passwordController, Constants.password),
                           const SizedBox(height: 20),
@@ -121,16 +122,18 @@ extension LoginViewStateUI on LoginViewState {
         child: TextButton(
           style: textButtonStyleFill(),
           onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const DefaultWareHouse()));
-
             if (_formKey.currentState!.validate()) {
               // ignore: invalid_use_of_protected_member
               setState(() {
                 isLoading = true;
               });
+
+              // DialogUtils.displayDialogOKCallBack(context, "asdsad");
+
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const DefaultWareHouse()));
 
               //   try {
               //     responseTokenInfo = await authenticateUser();
@@ -156,8 +159,8 @@ extension LoginViewStateUI on LoginViewState {
               //     // ignore: use_build_context_synchronously
               //     DialogUtils.displayDialogOKCallBack(context, error.toString());
               //   }
-              // } else {
-              //   print("Not Validated"); // ignore: avoid_print
+            } else {
+              print("Not Validated"); // ignore: avoid_print
             }
           },
           child: const Text(Constants.singIn),

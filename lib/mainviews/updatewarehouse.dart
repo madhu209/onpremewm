@@ -50,7 +50,7 @@ class UpdateWareHouseState extends State<UpdateWareHouse> {
                           width: 40,
                           height: 48,
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 20),
                         Expanded(
                           child: PlainTextField(
                               numberController, "Enter warehouse no", false),
