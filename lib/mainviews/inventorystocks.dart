@@ -23,44 +23,24 @@ class InventoryStockListViewState extends State<InventoryStockListView> {
       body: Padding(
         padding: const EdgeInsets.only(left: 40, right: 40, top: 20),
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              productTtile(),
-              const SizedBox(height: 30),
-              totalStockInfo(true, 'Total Physical Stock', '1200',
-                  'Total Available Stock', '100'),
-              const SizedBox(height: 40),
-              const Divider(
-                color: Colors.black,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            productTtile(),
+            const SizedBox(height: 30),
+            totalStockInfo(true, 'Total Physical Stock', '1200',
+                'Total Available Stock', '100'),
+            const SizedBox(height: 40),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  return cardStockInfo();
+                },
               ),
-              SingleChildScrollView(
-                child: Column(
-                  children: List.generate(20, (index) {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 10),
-                        const Text(
-                          'Goods ISSUE TITLE',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 15),
-                        totalStockInfo(false, 'Physical Stock', '1',
-                            'Available Stock', '1'),
-                        const SizedBox(height: 10),
-                        const Divider(
-                          color: Colors.black,
-                        )
-                      ],
-                    );
-                  }),
-                ),
-              )
-            ]),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -112,6 +92,26 @@ class InventoryStockListViewState extends State<InventoryStockListView> {
             )
           ],
         ),
+      ],
+    );
+  }
+
+  Widget cardStockInfo() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 10),
+        const Text(
+          'Goods ISSUE TITLE',
+          style: TextStyle(
+              color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 15),
+        totalStockInfo(false, 'Physical Stock', '1', 'Available Stock', '1'),
+        const SizedBox(height: 10),
+        const Divider(
+          color: Colors.black,
+        )
       ],
     );
   }

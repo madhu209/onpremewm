@@ -3,6 +3,7 @@ import 'package:onpremewm/constants/assets.dart';
 import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/constants/constants.dart';
 import 'package:onpremewm/mainviews/operationsmenu.dart';
+import 'package:onpremewm/mainviews/warehouselist.dart';
 import 'package:onpremewm/styles/button_style.dart';
 import 'package:onpremewm/views/plaintextfield.dart';
 
@@ -55,7 +56,17 @@ class UpdateWareHouseState extends State<UpdateWareHouse> {
                               numberController, "Enter warehouse no", false),
                         ),
                         const SizedBox(width: 10),
-                        const Icon(Icons.search)
+                        IconButton.filled(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const WareHouseList(),
+                                ));
+                          },
+                          icon: const Icon(Icons.search),
+                        )
+                        // const Icon(Icons.search)
                       ],
                     ),
                     const SizedBox(height: 50),

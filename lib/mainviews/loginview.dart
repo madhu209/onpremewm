@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:onpremewm/constants/assets.dart';
 import 'package:onpremewm/constants/constants.dart';
 import 'package:onpremewm/mainviews/defaultwarehouse.dart';
+import 'package:onpremewm/network/loginnetworkcontroller.dart';
+import 'package:onpremewm/network/models/responselogin.dart';
 import 'package:onpremewm/styles/button_style.dart';
 import 'package:onpremewm/views/plaintextfield.dart';
 import 'package:onpremewm/views/textfield.dart';
@@ -20,11 +22,29 @@ class LoginViewState extends State<LoginView> {
   late TextEditingController passwordController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  bool isLoading = false;
+
   @override
   void initState() {
     super.initState();
     usernameController = TextEditingController(text: '');
     passwordController = TextEditingController(text: '');
+  }
+
+  Future<ResponseLogin> loginUser(String email, String password) async {
+    try {
+      /* Login User */
+      var loginBody = {"Email": email, "Password": password};
+      var loginData = await LoginNetworkController().loginUser(loginBody);
+      var responseLogin = ResponseLogin.fromJson(loginData);
+      // if (responseLogin.statusCode == 200) {
+      return responseLogin;
+      // } else {
+      //   throw Exception(responseLogin.message);
+      // }
+    } catch (error) {
+      throw error.toString();
+    }
   }
 
   @override
@@ -106,39 +126,39 @@ extension LoginViewStateUI on LoginViewState {
                 MaterialPageRoute(
                     builder: (context) => const DefaultWareHouse()));
 
-            // if (_formKey.currentState!.validate()) {
-            //   // ignore: invalid_use_of_protected_member
-            //   setState(() {
-            //     isLoading = true;
-            //   });
+            if (_formKey.currentState!.validate()) {
+              // ignore: invalid_use_of_protected_member
+              setState(() {
+                isLoading = true;
+              });
 
-            //   try {
-            //     responseTokenInfo = await authenticateUser();
-            //     accessToken = await getAuthToken();
-            //     responseLogin = await loginUser(
-            //         emailController.text, passwordController.text);
-            //     StateManager().responseLogin = responseLogin;
-            //     await UserNetworkController().getUserProfileInfo();
-            //     // ignore: invalid_use_of_protected_member
-            //     setState(() {
-            //       isLoading = false;
-            //     });
-            //     // ignore: use_build_context_synchronously
-            //     Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //             builder: (context) => const XCarrierTabBar()));
-            //   } catch (error) {
-            //     // ignore: invalid_use_of_protected_member
-            //     setState(() {
-            //       isLoading = false;
-            //     });
-            //     // ignore: use_build_context_synchronously
-            //     DialogUtils.displayDialogOKCallBack(context, error.toString());
-            //   }
-            // } else {
-            //   print("Not Validated"); // ignore: avoid_print
-            // }
+              //   try {
+              //     responseTokenInfo = await authenticateUser();
+              //     accessToken = await getAuthToken();
+              //     responseLogin = await loginUser(
+              //         emailController.text, passwordController.text);
+              //     StateManager().responseLogin = responseLogin;
+              //     await UserNetworkController().getUserProfileInfo();
+              //     // ignore: invalid_use_of_protected_member
+              //     setState(() {
+              //       isLoading = false;
+              //     });
+              //     // ignore: use_build_context_synchronously
+              //     Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (context) => const XCarrierTabBar()));
+              //   } catch (error) {
+              //     // ignore: invalid_use_of_protected_member
+              //     setState(() {
+              //       isLoading = false;
+              //     });
+              //     // ignore: use_build_context_synchronously
+              //     DialogUtils.displayDialogOKCallBack(context, error.toString());
+              //   }
+              // } else {
+              //   print("Not Validated"); // ignore: avoid_print
+            }
           },
           child: const Text(Constants.singIn),
         ),

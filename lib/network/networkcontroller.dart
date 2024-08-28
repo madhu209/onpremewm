@@ -51,7 +51,7 @@ class NetworkController {
 
   // Map<String, String> get headers => {"Authorization": ""};
 
-  Map<String, String> headers() {
+  Map<String, String> headers(String email, String password) {
     String credentials = "$email:$password";
     Codec<String, String> stringToBase64 = utf8.fuse(base64);
     return {

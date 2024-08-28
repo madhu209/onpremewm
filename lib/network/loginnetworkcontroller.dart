@@ -8,7 +8,7 @@ class LoginNetworkController {
           Endpoints.baseUrl,
           Endpoints.login,
           HTTPMethod.get,
-          NetworkController().headers(),
+          NetworkController().headers('', ''),
           requestBody, {});
     } catch (error) {
       throw error.toString();
