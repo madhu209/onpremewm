@@ -137,7 +137,7 @@ extension LoginViewStateUI on LoginViewState {
               stateController.userData = UserData(
                   username: usernameController.text,
                   password: passwordController.text,
-                  warehouseNumber: "");
+                  warehouseNumber: "1710");
 
               Navigator.push(
                   context,

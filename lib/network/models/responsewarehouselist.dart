@@ -1,27 +1,40 @@
-import 'dart:ffi';
-
 class ResponseWareHouse {
-  String context;
-  String metadataEtag;
-  WareHouseValue value;
+  String odataContext;
+  String odataMetadataEtag;
+  List<Value> value;
 
-  ResponseWareHouse(
-      {required this.context, required this.metadataEtag, required this.value});
+  ResponseWareHouse({
+    required this.odataContext,
+    required this.odataMetadataEtag,
+    required this.value,
+  });
 
-  factory ResponseWareHouse.fromJson(Map<String, dynamic> parsedJson) {
-    return ResponseWareHouse(
-        context: parsedJson['@odata.context'].toString(),
-        metadataEtag: parsedJson['@odata.metadataEtag'].toString(),
-        value: WareHouseValue.fromJson(parsedJson['value']));
-  }
+  factory ResponseWareHouse.fromJson(Map<String, dynamic> json) =>
+      ResponseWareHouse(
+        odataContext: json["@odata.context"],
+        odataMetadataEtag: json["@odata.metadataEtag"],
+        value: List<Value>.from(json["value"].map((x) => Value.fromJson(x))),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "@odata.context": odataContext,
+        "@odata.metadataEtag": odataMetadataEtag,
+        "value": List<dynamic>.from(value.map((x) => x.toJson())),
+      };
 }
 
-class WareHouseValue {
-  String eWMWarehouse;
+class Value {
+  String ewmWarehouse;
 
-  WareHouseValue({required this.eWMWarehouse});
+  Value({
+    required this.ewmWarehouse,
+  });
 
-  factory WareHouseValue.fromJson(Map<String, dynamic> parsedJson) {
-    return WareHouseValue(eWMWarehouse: parsedJson['EWMWarehouse'].toString());
-  }
+  factory Value.fromJson(Map<String, dynamic> json) => Value(
+        ewmWarehouse: json["EWMWarehouse"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "EWMWarehouse": ewmWarehouse,
+      };
 }

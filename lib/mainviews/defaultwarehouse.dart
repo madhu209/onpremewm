@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/constants/constants.dart';
+import 'package:onpremewm/mainviews/loginview.dart';
 import 'package:onpremewm/mainviews/operationsmenu.dart';
 import 'package:onpremewm/mainviews/updatewarehouse.dart';
 import 'package:onpremewm/styles/button_style.dart';
@@ -30,9 +31,9 @@ class DefaultWareHouseState extends State<DefaultWareHouse> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Your Default Warehouse No is,'),
-            const Text(
-              '1000',
-              style: TextStyle(
+            Text(
+              stateController.userData.warehouseNumber,
+              style: const TextStyle(
                   color: Colors.black,
                   fontSize: 60,
                   fontWeight: FontWeight.bold),

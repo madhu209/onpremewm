@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onpremewm/constants/assets.dart';
 import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/constants/constants.dart';
+import 'package:onpremewm/mainviews/loginview.dart';
 import 'package:onpremewm/mainviews/operationsmenu.dart';
 import 'package:onpremewm/mainviews/warehouselist.dart';
 import 'package:onpremewm/styles/button_style.dart';
@@ -61,7 +62,7 @@ class UpdateWareHouseState extends State<UpdateWareHouse> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const WareHouseList(),
+                                  builder: (context) => WareHouseList(),
                                 ));
                           },
                           icon: const Icon(Icons.search),
@@ -84,12 +85,12 @@ class UpdateWareHouseState extends State<UpdateWareHouse> {
 
 extension UpdateWareHouseStateUI on UpdateWareHouseState {
   Widget defaultwarehouseValue() {
-    return const Column(
+    return Column(
       children: [
-        Text('Your Default Warehouse No is,'),
+        const Text('Your Default Warehouse No is,'),
         Text(
-          '1000',
-          style: TextStyle(
+          stateController.userData.warehouseNumber,
+          style: const TextStyle(
               color: Colors.black, fontSize: 60, fontWeight: FontWeight.bold),
         )
       ],

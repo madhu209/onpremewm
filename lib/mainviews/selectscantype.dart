@@ -4,6 +4,7 @@ import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/constants/constants.dart';
 import 'package:onpremewm/mainviews/inventorystocks.dart';
 import 'package:onpremewm/styles/button_style.dart';
+import 'package:onpremewm/views/dialogutils.dart';
 import 'package:onpremewm/views/plaintextfield.dart';
 
 class SelectScanType extends StatefulWidget {
@@ -53,7 +54,7 @@ class SelectScanTypeState extends State<SelectScanType> {
               const SizedBox(height: 20),
               Form(
                 key: _formKey,
-                child: formFields(),
+                child: formFields(context),
               )
             ],
           ),
@@ -84,7 +85,7 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
     );
   }
 
-  Widget formFields() {
+  Widget formFields(BuildContext context) {
     return Column(
       children: [
         Row(
@@ -96,18 +97,22 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
             ),
             const SizedBox(width: 10),
             Expanded(
-              child:
-                  PlainTextField(numberController, "Enter warehouse no", false),
+              child: PlainTextField(
+                  numberController,
+                  select == "Product"
+                      ? "Enter Product number"
+                      : "Enter Storage Bin",
+                  false),
             ),
           ],
         ),
         const SizedBox(height: 40),
-        getStockInfoButton(),
+        getStockInfoButton(context),
       ],
     );
   }
 
-  Widget getStockInfoButton() {
+  Widget getStockInfoButton(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 0, right: 0),
       child: SizedBox(
@@ -116,12 +121,17 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
         child: TextButton(
           style: textButtonStyleFill(),
           onPressed: () {
-            Navigator.push(
+            if (select == "") {
+              DialogUtils.displayDialogOKCallBack(context, "Select Scan Type");
+            } else {
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => InventoryStockListView(
                       isFromProduct: select == "Product" ? true : false),
-                ));
+                ),
+              );
+            }
           },
           child: const Text(Constants.getStockInfo),
         ),

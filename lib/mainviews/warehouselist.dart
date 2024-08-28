@@ -3,8 +3,11 @@ import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/network/models/responsewarehouselist.dart';
 import 'package:onpremewm/network/warehousenetworkcontroller.dart';
 
+// ignore: must_be_immutable
 class WareHouseList extends StatefulWidget {
-  const WareHouseList({super.key});
+  WareHouseList({super.key});
+
+  List<Value> warehouseList = [];
 
   @override
   State<StatefulWidget> createState() {
@@ -27,6 +30,9 @@ class WareHouseListState extends State<WareHouseList> {
       var data =
           await WareHouseNetworkController().getWareHouseList({}, parameters);
       var responseWareHouse = ResponseWareHouse.fromJson(data);
+      setState(() {
+        widget.warehouseList = responseWareHouse.value;
+      });
       // if (responseLogin.statusCode == 200) {
       return responseWareHouse;
       // } else {
@@ -44,15 +50,15 @@ class WareHouseListState extends State<WareHouseList> {
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: ListView.builder(
-          itemCount: 20,
+          itemCount: widget.warehouseList.length,
           itemBuilder: (context, index) {
-            return const Column(
+            return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                    padding: EdgeInsets.only(top: 10, bottom: 10),
-                    child: Text('Number')),
-                Divider(
+                    padding: const EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(widget.warehouseList[index].ewmWarehouse)),
+                const Divider(
                   color: Colors.grey,
                 )
               ],
