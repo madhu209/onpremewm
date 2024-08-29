@@ -3,6 +3,7 @@ import 'package:onpremewm/constants/assets.dart';
 import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/constants/constants.dart';
 import 'package:onpremewm/mainviews/selectscantype.dart';
+import 'package:onpremewm/views/dialogutils.dart';
 
 class OperationsMenu extends StatefulWidget {
   const OperationsMenu({super.key});
@@ -54,10 +55,15 @@ class OperationsMenuState extends State<OperationsMenu> {
               children: List.generate(menuList.length, (index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SelectScanType()));
+                    if (index == 0) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SelectScanType()));
+                    } else {
+                      DialogUtils.displayDialogOKCallBack(
+                          context, 'Work in progress');
+                    }
                   },
                   child: OperationsMenuCard(menu: menuList[index]),
                 );
