@@ -129,7 +129,7 @@ class InventoryStockListViewState extends State<InventoryStockListView> {
       appBar: customAppBar(
           'Warehouse: ${stateController.userData.warehouseNumber}'),
       body: Padding(
-        padding: const EdgeInsets.only(left: 40, right: 40, top: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
