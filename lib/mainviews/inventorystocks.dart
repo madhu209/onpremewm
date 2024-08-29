@@ -68,7 +68,6 @@ class InventoryStockListViewState extends State<InventoryStockListView> {
       });
       return response;
     } catch (error) {
-      print(error.toString());
       throw error.toString();
     }
   }

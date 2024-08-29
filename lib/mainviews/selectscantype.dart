@@ -26,7 +26,7 @@ class SelectScanTypeState extends State<SelectScanType> {
   @override
   void initState() {
     super.initState();
-    numberController = TextEditingController(text: ''); // EWMS4-31
+    numberController = TextEditingController(text: 'EWMS4-31'); // EWMS4-31
     select = '';
   }
 

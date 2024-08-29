@@ -3,6 +3,7 @@ import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/mainviews/cells/producttitle.dart';
 import 'package:onpremewm/mainviews/cells/storagecard.dart';
 import 'package:onpremewm/mainviews/loginview.dart';
+import 'package:onpremewm/mainviews/productdetailinfo.dart';
 import 'package:onpremewm/network/models/responseavailablestock.dart';
 
 class ProductListView extends StatefulWidget {
@@ -41,7 +42,18 @@ class ProductListViewState extends State<ProductListView> {
               child: ListView.builder(
                 itemCount: widget.stockList.length,
                 itemBuilder: (context, index) {
-                  return StorageCard(stockValue: widget.stockList[index]);
+                  return ListTile(
+                    title: StorageCard(stockValue: widget.stockList[index]),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProductDetailInfo(
+                              stockInfo: widget.stockList[index]),
+                        ),
+                      );
+                    },
+                  );
                 },
               ),
             )
