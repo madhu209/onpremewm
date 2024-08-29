@@ -50,17 +50,6 @@ class ProductDetailInfoState extends State<ProductDetailInfo> {
       children: [
         Text(staticValue),
         const SizedBox(height: 10),
-        // Container(
-        //   width: double.infinity,
-        //   height: 40,
-        //   margin: const EdgeInsets.all(15.0),
-        //   padding:
-        //       const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-        //   decoration: BoxDecoration(
-        //       border: Border.all(color: Colors.black),
-        //       borderRadius: const BorderRadius.all(Radius.circular(5))),
-        //   child: Text(value),
-        // ),
         SizedBox(
           height: 40,
           child: TextField(
