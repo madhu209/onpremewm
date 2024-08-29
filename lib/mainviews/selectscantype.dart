@@ -26,7 +26,7 @@ class SelectScanTypeState extends State<SelectScanType> {
   @override
   void initState() {
     super.initState();
-    numberController = TextEditingController(text: '');
+    numberController = TextEditingController(text: ''); // EWMS4-31
     select = '';
   }
 
@@ -101,7 +101,9 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
                   numberController,
                   select == "Product"
                       ? "Enter Product number"
-                      : "Enter Storage Bin",
+                      : select == ""
+                          ? ""
+                          : "Enter Storage Bin",
                   false),
             ),
           ],
@@ -124,13 +126,20 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
             if (select == "") {
               DialogUtils.displayDialogOKCallBack(context, "Select Scan Type");
             } else {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => InventoryStockListView(
-                      isFromProduct: select == "Product" ? true : false),
-                ),
-              );
+              if (select == "Product") {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => InventoryStockListView(
+                      isFromProduct: select == "Product" ? true : false,
+                      productName: numberController.text,
+                    ),
+                  ),
+                );
+              } else {
+                DialogUtils.displayDialogOKCallBack(
+                    context, "Work in progress");
+              }
             }
           },
           child: const Text(Constants.getStockInfo),

@@ -16,6 +16,8 @@ class DefaultWareHouse extends StatefulWidget {
 }
 
 class DefaultWareHouseState extends State<DefaultWareHouse> {
+  var wareHouseNumber = stateController.userData.warehouseNumber;
+
   @override
   void initState() {
     super.initState();
@@ -24,7 +26,8 @@ class DefaultWareHouseState extends State<DefaultWareHouse> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(Constants.selectWareHouseTitle),
+      appBar:
+          customAppBar(Constants.selectWareHouseTitle, showBackButton: false),
       body: Align(
         alignment: Alignment.center,
         child: Column(
@@ -32,7 +35,7 @@ class DefaultWareHouseState extends State<DefaultWareHouse> {
           children: [
             const Text('Your Default Warehouse No is,'),
             Text(
-              stateController.userData.warehouseNumber,
+              wareHouseNumber,
               style: const TextStyle(
                   color: Colors.black,
                   fontSize: 60,
@@ -81,7 +84,13 @@ extension DefaultWareHouseStateUI on DefaultWareHouseState {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const UpdateWareHouse()));
+                    builder: (context) => const UpdateWareHouse())).then(
+              (value) {
+                setState(() {
+                  wareHouseNumber = stateController.userData.warehouseNumber;
+                });
+              },
+            );
           },
           child: const Text(Constants.updateWarehouse),
         ),

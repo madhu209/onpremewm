@@ -21,6 +21,8 @@ class UpdateWareHouseState extends State<UpdateWareHouse> {
   late TextEditingController numberController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  var wareHouseNumber = stateController.userData.warehouseNumber;
+
   @override
   void initState() {
     super.initState();
@@ -60,10 +62,17 @@ class UpdateWareHouseState extends State<UpdateWareHouse> {
                         IconButton.filled(
                           onPressed: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => WareHouseList(),
-                                ));
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => WareHouseList()))
+                                .then(
+                              (value) {
+                                setState(() {
+                                  wareHouseNumber =
+                                      stateController.userData.warehouseNumber;
+                                });
+                              },
+                            );
                           },
                           icon: const Icon(Icons.search),
                         )
@@ -89,7 +98,7 @@ extension UpdateWareHouseStateUI on UpdateWareHouseState {
       children: [
         const Text('Your Default Warehouse No is,'),
         Text(
-          stateController.userData.warehouseNumber,
+          wareHouseNumber,
           style: const TextStyle(
               color: Colors.black, fontSize: 60, fontWeight: FontWeight.bold),
         )

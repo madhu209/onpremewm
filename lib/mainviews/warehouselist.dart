@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onpremewm/constants/colors.dart';
+import 'package:onpremewm/mainviews/loginview.dart';
 import 'package:onpremewm/network/models/responsewarehouselist.dart';
 import 'package:onpremewm/network/warehousenetworkcontroller.dart';
 
@@ -52,16 +53,23 @@ class WareHouseListState extends State<WareHouseList> {
         child: ListView.builder(
           itemCount: widget.warehouseList.length,
           itemBuilder: (context, index) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 10),
-                    child: Text(widget.warehouseList[index].ewmWarehouse)),
-                const Divider(
-                  color: Colors.grey,
-                )
-              ],
+            return ListTile(
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
+                      child: Text(widget.warehouseList[index].ewmWarehouse)),
+                  const Divider(
+                    color: Colors.grey,
+                  )
+                ],
+              ),
+              onTap: () {
+                stateController.userData.warehouseNumber =
+                    widget.warehouseList[index].ewmWarehouse;
+                Navigator.of(context).pop();
+              },
             );
           },
         ),

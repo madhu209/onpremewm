@@ -59,32 +59,31 @@ class LoginViewState extends State<LoginView> {
           Align(
             alignment: Alignment.center,
             child: Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // const Spacer(),
-                    Image.asset(
-                      Assets.pluto,
-                      width: 200,
-                      height: 50,
-                    ),
-                    const SizedBox(height: 100),
-                    Form(
-                      key: _formKey,
-                      child: Column(
-                        children: [
-                          PlainTextField(
-                              usernameController, Constants.username, true),
-                          const SizedBox(height: 20),
-                          PasswordTF(passwordController, Constants.password),
-                          const SizedBox(height: 20),
-                          singInButton(),
-                        ],
-                      ),
-                    ),
-                    // const Spacer()
-                  ]),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 200),
+              child:
+                  Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+                // const Spacer(),
+                Image.asset(
+                  Assets.pluto,
+                  width: 200,
+                  height: 50,
+                ),
+                const SizedBox(height: 100),
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      PlainTextField(
+                          usernameController, Constants.username, true),
+                      const SizedBox(height: 20),
+                      PasswordTF(passwordController, Constants.password),
+                      const SizedBox(height: 20),
+                      singInButton(),
+                    ],
+                  ),
+                ),
+                // const Spacer()
+              ]),
             ),
           ),
           Align(
