@@ -36,7 +36,7 @@ class ProductListViewState extends State<ProductListView> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ProductTitle(productName: widget.productName),
+            ProductTitle(titleName: "Product", productName: widget.productName),
             const SizedBox(height: 40),
             Expanded(
               child: ListView.builder(

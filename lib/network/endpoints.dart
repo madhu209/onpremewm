@@ -11,4 +11,15 @@ class Endpoints {
 
   static String physicalStockProducts =
       "/sap/opu/odata4/sap/api_whse_physstockprod/srvd_a2x/sap/whsephysicalstockproducts/0001/WarehousePhysicalStockProducts";
+
+  // static String availableStockStorageBin =
+  //     "/sap/opu/odata4/sap/api_whse_availablestock/srvd_a2x/sap/warehouseavailablestock/0001/WarehouseAvailableStock";
+
+  // static String physicalStockStorageBin =
+  //     "/sap/opu/odata4/sap/api_whse_physstockprod/srvd_a2x/sap/whsephysicalstockproducts/0001/WarehousePhysicalStockProducts";
 }
+
+
+// https://pcs4h2022.plutocloud.com:8443/sap/opu/odata4/sap/api_whse_availablestock/srvd_a2x/sap/warehouseavailablestock/0001/WarehouseAvailableStock?$filter=EWMWarehouse eq '1710' and EWMStorageBin eq 'DOOR-YDI1'
+
+// https://pcs4h2022.plutocloud.com:8443/sap/opu/odata4/sap/api_whse_physstockprod/srvd_a2x/sap/whsephysicalstockproducts/0001/WarehousePhysicalStockProducts?$filter=EWMWarehouse eq '1710' and EWMStorageBin eq 'YMX3-01-03-D'

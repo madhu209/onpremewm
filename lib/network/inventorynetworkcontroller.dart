@@ -31,4 +31,34 @@ class InventoryNetworkController {
       throw error.toString();
     }
   }
+
+  // dynamic getStorageBinAvailableStockList(
+  //     Object requestBody, Map<String, dynamic> parameters) async {
+  //   try {
+  //     return await RequestController().fetchResponse(
+  //         Endpoints.baseUrl,
+  //         Endpoints.availableStockProducts,
+  //         HTTPMethod.get,
+  //         NetworkController().headers(),
+  //         requestBody,
+  //         parameters);
+  //   } catch (error) {
+  //     throw error.toString();
+  //   }
+  // }
+
+  // dynamic getStorageBinPhysicalStockList(
+  //     Object requestBody, Map<String, dynamic> parameters) async {
+  //   try {
+  //     return await RequestController().fetchResponse(
+  //         Endpoints.baseUrl,
+  //         Endpoints.physicalStockProducts,
+  //         HTTPMethod.get,
+  //         NetworkController().headers(),
+  //         requestBody,
+  //         parameters);
+  //   } catch (error) {
+  //     throw error.toString();
+  //   }
+  // }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProductTitle extends StatelessWidget {
-  ProductTitle({required this.productName, super.key});
+  ProductTitle({required this.titleName, required this.productName, super.key});
 
+  String titleName;
   String productName;
 
   @override
@@ -10,7 +11,7 @@ class ProductTitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Product:'),
+        Text('$titleName:'),
         const SizedBox(width: 10),
         Text(
           productName,

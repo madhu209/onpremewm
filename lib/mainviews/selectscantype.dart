@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:onpremewm/constants/assets.dart';
 import 'package:onpremewm/constants/colors.dart';
 import 'package:onpremewm/constants/constants.dart';
-import 'package:onpremewm/mainviews/inventorystocks.dart';
+import 'package:onpremewm/mainviews/inventoryproductstocks.dart';
+import 'package:onpremewm/mainviews/inventorystoragestocks.dart';
 import 'package:onpremewm/styles/button_style.dart';
 import 'package:onpremewm/views/dialogutils.dart';
 import 'package:onpremewm/views/plaintextfield.dart';
@@ -26,7 +27,8 @@ class SelectScanTypeState extends State<SelectScanType> {
   @override
   void initState() {
     super.initState();
-    numberController = TextEditingController(text: 'EWMS4-31'); // EWMS4-31
+    numberController =
+        TextEditingController(text: 'DOOR-YDI1'); // EWMS4-31 // DOOR-YDI1
     select = '';
   }
 
@@ -130,15 +132,24 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => InventoryStockListView(
+                    builder: (context) => InventoryProductStockListView(
                       isFromProduct: select == "Product" ? true : false,
                       productName: numberController.text,
                     ),
                   ),
                 );
               } else {
-                DialogUtils.displayDialogOKCallBack(
-                    context, "Work in progress");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => InventoryStorageBinStockListView(
+                      isFromProduct: select == "Product" ? true : false,
+                      productName: numberController.text,
+                    ),
+                  ),
+                );
+                // DialogUtils.displayDialogOKCallBack(
+                //     context, "Work in progress");
               }
             }
           },
