@@ -76,8 +76,8 @@ extension SelectScanTypeStateUI on SelectScanTypeState {
           value: gender[btnValue],
           groupValue: select,
           onChanged: (value) {
+            // ignore: invalid_use_of_protected_member
             setState(() {
-              print(value);
               select = value;
             });
           },
