@@ -27,6 +27,8 @@ class InventoryStorageStockListViewState
   List<StockValue> physicalStockList = [];
   List<StockValue> selectedStockList = [];
 
+  // List<ProductsStockList> allProductsStockList = [];
+
   @override
   void initState() {
     super.initState();
@@ -182,10 +184,8 @@ class InventoryStorageStockListViewState
         GestureDetector(
           child: Container(
             padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.blueAccent),
-              borderRadius: const BorderRadius.all(Radius.circular(5)),
-            ),
+            decoration:
+                BoxDecoration(border: Border.all(color: Colors.blueAccent)),
             child: Column(
               children: [
                 Text(leftTitle),

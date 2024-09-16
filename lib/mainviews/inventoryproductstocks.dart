@@ -181,20 +181,16 @@ Widget totalStockInfo(bool isTotalStock, leftTitle, String leftValue,
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Container(
-        decoration: BoxDecoration(border: Border.all(color: Colors.blueAccent)),
-        child: Column(
-          children: [
-            Text(leftTitle),
-            const SizedBox(height: 5),
-            Text(
-              leftValue,
-              style: TextStyle(
-                  fontSize: isTotalStock ? 25 : 15,
-                  fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
+      Column(
+        children: [
+          Text(leftTitle),
+          const SizedBox(height: 5),
+          Text(
+            leftValue,
+            style: TextStyle(
+                fontSize: isTotalStock ? 25 : 15, fontWeight: FontWeight.bold),
+          )
+        ],
       ),
       const Spacer(),
       Column(
